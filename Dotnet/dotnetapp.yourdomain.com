@@ -1,6 +1,6 @@
 server {
 	listen 443;
-    server_name dotnetapp.yourdomain.com;
+    	server_name dotnetapp.yourdomain.com;
 
 	#FIND SSL STUFF IN ROOT GIT
 
