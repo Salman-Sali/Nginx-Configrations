@@ -6,7 +6,7 @@
 #systemctl start dotnetapp.service
 
 [Unit]
-Description=Example .NET Web API App running on Ubuntu
+Description=Example .NET App running on Ubuntu
 
 [Service]
 WorkingDirectory=/path/to/your/dotnet/directory/containing/the/dll
