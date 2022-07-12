@@ -1,0 +1,25 @@
+#INSTRUCTIONS
+#This file should be placed in /etc/systemd/system
+#after writing the config to the file run the following commands
+#
+#systemctl daemon-reload
+#systemctl start dotnetapp.service
+
+[Unit]
+Description=Example .NET Web API App running on Ubuntu
+
+[Service]
+WorkingDirectory=/path/to/your/dotnet/directory/containing/the/dll
+ExecStart=/snap/bin/dotnet /path/to/your/dotnet/directory/containing/the/dll/dotnetapp.dll --urls=http://0.0.0.0:5000
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnetapp
+User=ubuntu
+#place your env like these
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+Environment=DbString=Host=sfgjhklkhgj;Port=3894;
+
+[Install]
+WantedBy=multi-user.target
